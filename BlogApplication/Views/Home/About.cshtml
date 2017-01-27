@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DAL.BlogApp.Entities.Blog>
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div>
+    @foreach (var blog in Model)
+    {
+        <div>@blog.Name</div>
+
+        foreach (var post in blog.Posts)
+        {
+            <div>@post.Title</div>
+            <div>@post.Text</div>
+
+            foreach (var comment in post.Comments)
+            {
+                <div>@comment.Text</div>
+                <div>@comment.DateCreated</div>
+            }
+        }
+    }
+</div>
