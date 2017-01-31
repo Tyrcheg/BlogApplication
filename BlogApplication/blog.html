@@ -1,0 +1,65 @@
+﻿<html ng-app="app">
+<head>
+    <title>Blog</title>
+    <base href="/" />
+
+    <meta charset="utf-8" />
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.0/angular-route.min.js"></script>
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/blogController.js"></script>
+    <script src="app/controllers/indexController.js"></script>
+
+    <script src="app/services/blogService.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" >
+            <div class="navbar navbar-default" >
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li><span class="navbar-brand">Blog</span></li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Blog/Index">Home</a></li>
+                        <li><a href="/Blog/Index2">Blog</a></li>
+                    </ul>
+                    <ul class="nav navbar navbar-right">
+                        <li><a href="/Registration/CreateAccount">Create Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div ng-controller="indexController as c">
+            {{ c.helloWorld }}
+            {{ helloMessage }}
+            <div ui-view>
+                {{ c.helloWorld }}
+            </div>
+        </div>
+
+        <div ng-view></div>
+
+
+    </div>
+</body>
+
+<!--<body ng-controller="indexController as vm">
+    <div ui-view>
+        { {vm.helloWorld}}
+    </div>
+</body>-->
+</html>

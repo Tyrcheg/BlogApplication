@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationRole.cs" />
-    <Compile Include="ApplicationUser.cs" />
     <Compile Include="BlogVM.cs" />
     <Compile Include="CommentVM.cs" />
     <Compile Include="PostVM.cs" />

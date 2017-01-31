@@ -15,7 +15,8 @@ namespace BlogApplication.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return Redirect("~/blog");
+            //return View(db.Users.ToList());
         }
 
         public ActionResult About()
@@ -28,9 +29,9 @@ namespace BlogApplication.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            
 
-            return View();
+            return View(db.Users.ToList());
         }
     }
 }

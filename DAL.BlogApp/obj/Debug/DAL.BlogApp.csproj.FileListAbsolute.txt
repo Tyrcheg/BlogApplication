@@ -9,6 +9,6 @@ A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\bin\Debug\EntityFramewor
 A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\bin\Debug\EntityFramework.SqlServer.xml
 A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\obj\Debug\DAL.BlogApp.csprojResolveAssemblyReference.cache
 A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\obj\Debug\DAL.BlogApp.dll
 A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\obj\Debug\DAL.BlogApp.pdb
+A:\AngularJS\Angular1Plural\BlogApplication\DAL.BlogApp\obj\Debug\DAL.BlogApp.csprojResolveAssemblyReference.cache

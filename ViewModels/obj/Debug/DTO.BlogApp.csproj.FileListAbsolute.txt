@@ -1,0 +1,4 @@
+A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\bin\Debug\ViewModels.dll
+A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\bin\Debug\ViewModels.pdb
+A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\obj\Debug\ViewModels.dll
+A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\obj\Debug\ViewModels.pdb

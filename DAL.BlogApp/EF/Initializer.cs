@@ -49,6 +49,8 @@ namespace DAL.BlogApp.EF
                 }
             );
 
+            context.SaveChanges();
+
             context.Blogs.AddRange(new[] {
                 new Blog
                 {
@@ -90,7 +92,7 @@ namespace DAL.BlogApp.EF
                         {
                             Title = "Second post",
                             Text = "This post is about all staff",
-                             DateCreated = DateTime.Now,
+                            DateCreated = DateTime.Now,
                             Comments = new List<Comment>
                             {
                                 new Comment

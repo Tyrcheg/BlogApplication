@@ -9,6 +9,8 @@ namespace ViewModels
         public string Name { get; set; }
         public DateTime? DateCreated { get; set; }
         //public virtual ICollection<Post> Posts { get; set; }
-        public virtual ApplicationUser User { get; set; }
+
+        public string Title { get; set; }
+        public string Text { get; set; }
     }
 }
