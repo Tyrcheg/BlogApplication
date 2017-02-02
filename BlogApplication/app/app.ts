@@ -11,6 +11,12 @@ module app {
             .when('/Blog/Index2', {
                 templateUrl: 'app/views/blog.html', controller: 'blogController'
             })
+            .when('/Index', {
+                templateUrl: 'app/views/index.html', controller: 'indexController'
+            })
+            .when('/Index2', {
+                templateUrl: 'app/views/blog.html', controller: 'blogController'
+            })
 
             /* .otherwise({
                redirectTo: '/'

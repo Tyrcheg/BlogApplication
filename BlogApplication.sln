@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.BlogApp", "DAL.BlogApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{135368F9-8A0D-4A6F-A175-9A7B21979A5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.BlogApp", "..\Test.Web\UI.BlogApp.csproj", "{890E4F30-A785-44EE-BBF2-9DEBE7247565}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{135368F9-8A0D-4A6F-A175-9A7B21979A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135368F9-8A0D-4A6F-A175-9A7B21979A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135368F9-8A0D-4A6F-A175-9A7B21979A5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{890E4F30-A785-44EE-BBF2-9DEBE7247565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{890E4F30-A785-44EE-BBF2-9DEBE7247565}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{890E4F30-A785-44EE-BBF2-9DEBE7247565}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{890E4F30-A785-44EE-BBF2-9DEBE7247565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

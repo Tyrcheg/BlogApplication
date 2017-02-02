@@ -15,7 +15,7 @@ namespace BlogApplication.Controllers
 
         public ActionResult Index()
         {
-            return Redirect("~/blog");
+            return Redirect("~/index");
             //return View(db.Users.ToList());
         }
 
