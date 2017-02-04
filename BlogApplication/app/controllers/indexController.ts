@@ -3,17 +3,21 @@
 module app {
 
     export class IndexController {
-        static $inject = ['$location', '$scope', '$rootScope'];
+        static $inject = ['$location', '$scope', '$rootScope', '$route', 'appTitleService'];
 
         constructor(private $location: ng.ILocationService,
-            private $scope: ng.IScope, private $rootScope) {
+            private $scope: ng.IScope,
+            private $rootScope: ng.IRootScopeService,
+            private $route: ng.route.IRoute,
+            private appTitleService: app.Services.AppTitleService) {
+
+            this.$rootScope.$on("$routeChangeSuccess", (event, current) => 
+                (current.loadedTemplateUrl == "app/templates/blogs.html") ?
+                    this.appTitleService.setTitle("Blog Application") :
+                (current.loadedTemplateUrl == "app/templates/myBlog.html") ?
+                    this.appTitleService.setTitle("My Blog") : null );
         }
 
-        pageTitle = "Blog Application";
-
-        changeTitle(name) {
-            this.pageTitle = name;
-        }
         /* authentication = new Authentication(); */
         authentication = { isAuth: true, userName: "Tyrik" };
 
@@ -23,6 +27,10 @@ module app {
 
         logIn() {
             this.authentication.isAuth = true;
+        }
+
+        onRootChange() {
+            console.log(this.$route.template);
         }
     }
 

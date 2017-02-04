@@ -2,26 +2,31 @@
 var app;
 (function (app) {
     var SingleBlogController = (function () {
-        function SingleBlogController($routeParams, $scope, blogservice, $http) {
+        function SingleBlogController($location, $routeParams, $scope, blogservice, $http, appTitleService) {
+            this.$location = $location;
             this.$routeParams = $routeParams;
             this.$scope = $scope;
             this.blogservice = blogservice;
             this.$http = $http;
-            //this.blogId = $routeParams.blogId;
-            //this.username = $routeParams.userName;
-            console.log($routeParams.blogId);
-            console.log($routeParams.userName);
+            this.appTitleService = appTitleService;
+            this.posts = [];
+            this.errors = [];
+            this.blogId = $routeParams.blogId;
+            this.appTitleService.setTitle($routeParams.userName + "'s blog");
+            this.loadPosts();
         }
-        SingleBlogController.prototype.getParams = function () {
-            this.blogId = this.$routeParams.blogId;
-            this.username = this.$routeParams.userName;
-            console.log(this.$routeParams);
-            console.log(this.blogId + " " + this.username);
+        SingleBlogController.prototype.loadPosts = function () {
+            var _this = this;
+            this.blogservice.getBlogPosts(this.blogId)
+                .then(function (response) { return _this.posts = response.data; }, function (error) { return _this.errors = error.data; });
         };
-        SingleBlogController.$inject = ['$scope', 'blogService', '$http', '$routeParams'];
+        SingleBlogController.prototype.goToPostWithId = function (id) {
+            this.$location.path('/Post/' + id);
+        };
+        SingleBlogController.$inject = ['$location', '$routeParams', '$scope',
+            'blogService', '$http', 'appTitleService'];
         return SingleBlogController;
     }());
     app.SingleBlogController = SingleBlogController;
     angular.module("app").controller('singleBlogController', SingleBlogController);
 })(app || (app = {}));
-//# sourceMappingURL=singleBlogController.js.map

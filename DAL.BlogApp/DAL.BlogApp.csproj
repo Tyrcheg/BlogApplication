@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="EF\AppContext.cs" />
     <Compile Include="EF\Initializer.cs" />
+    <Compile Include="EF\TextInitializer.cs" />
     <Compile Include="Entities\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\Blog.cs" />

@@ -4,8 +4,11 @@ module app {
     export class MyBlogController {
 
         static $inject = ['$location', '$scope', 'blogService', '$http', '$routeParams']
-        constructor(private $routeParams: ng.route.IRouteParamsService, private $http,
-            private $scope, private blogservice: app.Services.BlogService) {
+        constructor(private $location: ng.ILocationService,
+            private $routeParams: ng.route.IRouteParamsService,
+            private $http,
+            private $scope,
+            private blogservice: app.Services.BlogService) {
         }
 
 

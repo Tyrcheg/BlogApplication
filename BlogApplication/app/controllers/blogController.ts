@@ -10,15 +10,19 @@ module app {
         requestError = [];
         blogs = [];
 
-        constructor(private $location: ng.ILocationService, private $scope, 
-            private $rootScope, private blogService: app.Services.BlogService, private $http: ng.IHttpService) {
+        constructor(private $location: ng.ILocationService,
+            private $scope, 
+            private $rootScope,
+            private blogService: app.Services.BlogService,
+            private $http: ng.IHttpService) {
+
             this.loadBlogs();
             this.mySort = undefined;
             this.sortUnsort = "Sort";
         }
 
         loadBlogs() {
-            this.blogService.getBlogs()
+            this.blogService.getAllBlogs()
                 .then(
                 (response) => this.blogs = response.data,
                 (error) => this.requestError = error.data );
@@ -44,6 +48,8 @@ module app {
             event.stopPropagation();
             this.$location.path('/User/' + id);
         }
+
+
     }
 
     angular.module("app").controller('blogController', BlogController);

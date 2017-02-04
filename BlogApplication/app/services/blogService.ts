@@ -10,12 +10,12 @@ module app.Services {
 
         }
 
-        getBlogs(): ng.IPromise<any> {
+        getAllBlogs(): ng.IPromise<any> {
             return this.$http.get("api/blog/getBlogs");
         }
 
-        getBlog(id) {
-            return this.$http.get('/api/blog/getAllBlogsPosts/' + id);
+        getBlogPosts(id : number) : ng.IPromise<any> {
+            return this.$http.get('/api/blog/GetAllBlogsPosts/' + id);
         }
 
     }

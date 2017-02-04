@@ -1,9 +1,6 @@
 ﻿using DAL.BlogApp.EF;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 
@@ -16,8 +13,8 @@ namespace BlogApplication.Controllers
         [OutputCache(NoStore = true, Duration = 60, VaryByParam = "*")]
         public ActionResult Index()
         {
-            return Redirect("~/index");
-            //return View(db.Users.ToList());
+           // return RedirectToRoute("index.html");
+            return new FilePathResult("index.html", "text/html");
         }
 
         public ActionResult About()

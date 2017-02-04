@@ -16,7 +16,7 @@ var app;
         }
         BlogController.prototype.loadBlogs = function () {
             var _this = this;
-            this.blogService.getBlogs()
+            this.blogService.getAllBlogs()
                 .then(function (response) { return _this.blogs = response.data; }, function (error) { return _this.requestError = error.data; });
         };
         BlogController.prototype.sort = function () {
@@ -42,4 +42,3 @@ var app;
     app.BlogController = BlogController;
     angular.module("app").controller('blogController', BlogController);
 })(app || (app = {}));
-//# sourceMappingURL=blogController.js.map

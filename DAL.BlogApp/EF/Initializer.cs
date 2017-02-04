@@ -8,7 +8,7 @@ using System.Data.Entity.Migrations;
 
 namespace DAL.BlogApp.EF
 {
-    public class Initializer : DropCreateDatabaseIfModelChanges<AppContext>
+    public class Initializer : DropCreateDatabaseAlways<AppContext>
     {
         protected override void Seed(AppContext context)
         {
@@ -53,11 +53,11 @@ namespace DAL.BlogApp.EF
                 new Blog
                 {
                     DateCreated = DateTime.Now,
-                    Name = "Evgeniys blog",
+                    Name = "Sport blog",
 
                     User = new ApplicationUser
                     {
-                        UserName = "Evgeniy",
+                        UserName = "Dmitry",
                         PasswordHash = new PasswordHasher().HashPassword("qwe123"),
                         PhoneNumber = "123123123"
                     },
@@ -66,16 +66,16 @@ namespace DAL.BlogApp.EF
                     {
                         new Post
                         {
-                            Title = "First post",
-                            Text = "This post is first.",
+                            Title = "Run forest run",
+                            Text = TextInitializer.run,
                             Comments = new List<Comment>
                             {
                                 new Comment
                                 {
-                                    Text = "comment to cook blog",
+                                    Text = "Here must be a comment",
                                     User = new ApplicationUser
                                     {
-                                        UserName = "Dmitry",
+                                        UserName = "Artem",
                                         PasswordHash = new PasswordHasher().HashPassword("qwe123"),
                                         PhoneNumber = "123123123"
                                     },
@@ -86,8 +86,8 @@ namespace DAL.BlogApp.EF
                         },
                         new Post
                         {
-                            Title = "Second post",
-                            Text = "This post is about all staff",
+                            Title = "Swimming",
+                            Text = TextInitializer.swim,
                             DateCreated = DateTime.Now,
                             Comments = new List<Comment>
                             {
@@ -124,8 +124,8 @@ namespace DAL.BlogApp.EF
                     {
                         new Post
                         {
-                            Title = "Stake ribai",
-                            Text = "The best recipe of tibone.",
+                            Title = "Stake ribeye",
+                            Text = TextInitializer.ribeye,
                             Comments = new List<Comment>
                             {
                                 new Comment
@@ -145,7 +145,7 @@ namespace DAL.BlogApp.EF
                         new Post
                         {
                             Title = "Fried fish",
-                            Text = "Fried fish recipe",
+                            Text = TextInitializer.fish,
                             DateCreated = DateTime.Now,
                             Comments = new List<Comment>
                             {
@@ -158,7 +158,7 @@ namespace DAL.BlogApp.EF
                                 new Comment
                                 {
                                     Text = "awesome, man.",
-                                    User = userManager.FindByName("Dmitry"),
+                                    User = userManager.FindByName("Maxim"),
                                     DateCreated = DateTime.Now
                                 }
                             },

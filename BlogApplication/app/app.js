@@ -25,4 +25,3 @@ var app;
         $locationProvider.html5Mode(true);
     });
 })(app || (app = {}));
-//# sourceMappingURL=app.js.map

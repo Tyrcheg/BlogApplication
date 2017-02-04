@@ -8,28 +8,38 @@ module app {
     }
 
     export class SingleBlogController {
-        static $inject = ['$scope', 'blogService', '$http', '$routeParams']
+        static $inject = ['$location', '$routeParams', '$scope',
+            'blogService', '$http', 'appTitleService']
 
         username: string;
         blogId: number;
+        posts = [];
+        errors = [];
 
-        constructor(private $routeParams: IRouteParams, private $scope: ng.IScope,
-            private blogservice: app.Services.BlogService, private $http: ng.IHttpService) {
-            //this.blogId = $routeParams.blogId;
-            //this.username = $routeParams.userName;
-            console.log($routeParams.blogId);
-            console.log($routeParams.userName);
+        constructor(private $location: ng.ILocationService, private $routeParams: IRouteParams,
+            private $scope: ng.IScope,
+            private blogservice: app.Services.BlogService,
+            private $http: ng.IHttpService,
+            private appTitleService: app.Services.AppTitleService
+            ) {
+
+            this.blogId = $routeParams.blogId;
+            this.appTitleService.setTitle($routeParams.userName + "'s blog");
+
+            this.loadPosts();
         }
 
-        getParams() {
-            this.blogId = this.$routeParams.blogId;
-            this.username = this.$routeParams.userName;
-            console.log(this.$routeParams);
-            console.log(this.blogId + " " + this.username);
+        loadPosts() {
+            this.blogservice.getBlogPosts(this.blogId)
+                .then(
+                (response) => this.posts = response.data,
+                (error) => this.errors = error.data);
+        }
+
+        goToPostWithId(id) {
+            this.$location.path('/Post/' + id);
         }
     }
-
-
 
     angular.module("app").controller('singleBlogController', SingleBlogController);
 }

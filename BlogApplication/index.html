@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
 
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="app/common/blog.css" rel="stylesheet" />
+    <link href="app/common/styles.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 
@@ -17,12 +17,14 @@
 
     <script src="app/app.js"></script>
 
+    <script src="app/common/appTitle.js"></script>
+
     <script src="app/controllers/indexController.js"></script>
     <script src="app/controllers/blogController.js"></script>
     <script src="app/controllers/userController.js"></script>
     <script src="app/controllers/myBlogController.js"></script>
-    <script src="app/controllers/postController.js"></script>
     <script src="app/controllers/singleBlogController.js"></script>
+    <script src="app/controllers/postController.js"></script>
 
     <script src="app/services/blogService.js"></script>
     <script src="app/services/postService.js"></script>
@@ -36,11 +38,11 @@
                 <button class="btn btn-success navbar-toggle" data-ng-click="index.navbarExpanded = !index.navbarExpanded">
                     <span class="glyphicon glyphicon-chevron-down"></span>
                 </button>
-                <a class="navbar-brand" ng-click="index.changeTitle('Blog Application')" href="/">Home</a>
+                <a class="navbar-brand" ng-click="index.appTitleService.setTitle('Blog Application')" href="/">Home</a>
             </div>
             <div class="collapse navbar-collapse" data-collapse="!index.navbarExpanded">
                 <ul class="nav navbar-nav">
-                    <li data-ng-hide="!index.authentication.isAuth" ng-click="index.changeTitle('My blog')"><a href="/MyBlog">My Blog</a></li>
+                    <li data-ng-hide="!index.authentication.isAuth" ng-click="index.appTitleService.setTitle('My blog')"><a href="/MyBlog">My Blog</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li data-ng-hide="!index.authentication.isAuth"><a href="">Welcome {{ index.authentication.userName}}</a></li>
@@ -56,7 +58,7 @@
     <div class="jumbotron">
         <div class="container">
             <div class="page-header text-center">
-                <h1>{{ index.pageTitle }}</h1>
+                <h1>{{ index.appTitleService.title }}</h1>
             </div>
         </div>
     </div>

@@ -2,8 +2,7 @@
 var app;
 (function (app) {
     var MyBlogController = (function () {
-        function MyBlogController($location, $routeParams, $http, $scope, blogservice) {
-            this.$location = $location;
+        function MyBlogController($routeParams, $http, $scope, blogservice) {
             this.$routeParams = $routeParams;
             this.$http = $http;
             this.$scope = $scope;
@@ -15,3 +14,4 @@ var app;
     app.MyBlogController = MyBlogController;
     angular.module("app").controller('myBlogController', MyBlogController);
 })(app || (app = {}));
+//# sourceMappingURL=blog.myBlogController.js.map

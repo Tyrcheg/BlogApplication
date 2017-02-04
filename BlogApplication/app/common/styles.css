@@ -19,3 +19,15 @@
 .userLink:hover {
     text-decoration: underline;
 }
+
+.commentSection {
+    padding-left: 20px;
+}
+
+body {
+    font-size: large;
+}
+
+#addCommentButton {
+    padding: 0 0 15px 25px;
+}

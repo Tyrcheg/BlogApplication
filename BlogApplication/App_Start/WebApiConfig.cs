@@ -9,7 +9,7 @@ namespace BlogApplication.App_Start
         {
             config.Routes.MapHttpRoute(
                 "Api defalult",
-                "api/{controller}/{id}",
+                "api/{controller}/{action}/{id}",
                 new { id = RouteParameter.Optional });
 
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = 

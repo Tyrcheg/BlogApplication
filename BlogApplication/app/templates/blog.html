@@ -1,6 +1,21 @@
 ﻿<div ng-controller="singleBlogController as vm">
+    <input name="sortInput" type="text" class="form-control" ng-model="findByName" placeholder="Type in to find a particular post" />
+    <br />
 
-    <div>
-        <button ng-click="vm.getParams()">GetParams</button>
+    <div ng-repeat="post in vm.posts" class="blogsListElement">
+        <div ng-click="vm.goToPostWithId(post.id)" class="blogsListElementContent">
+            <h3>Title: {{post.title}}</h3>
+            <p>Date: {{ post.dateCreated | date : short }}</p>
+           
+        </div>
+    </div>
+
+    <div ng-hide="vm.errors.length ==  0">
+        <h4 class="text-danger">Errors while loading</h4>
+        <ol>
+            <li ng-repeat="error in vm.errors " filter : findByName">
+                <p> {{ error }}</p>
+            </li>
+        </ol>
     </div>
 </div>

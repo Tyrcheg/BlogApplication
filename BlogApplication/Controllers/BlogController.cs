@@ -29,24 +29,21 @@ namespace BlogApplication.Controllers
             return blogsList;
         }
 
-        //public IEnumerable<PostVM> GetAllBlogsPosts(int? id)
-        //{
-        //    var postsList = new List<PostVM>();
+        public IEnumerable<PostVM> GetAllBlogsPosts(int? id)
+        {
+            var postsList = new List<PostVM>();
 
-        //    foreach (var post in db.Posts.Where(x => x.Blog.Id == id))
-        //    {
-        //        postsList.Add(new PostVM
-        //        {
-        //            Id = post.Id,
-        //            DateCreated = post.DateCreated,
-        //            Text = post.Text,
-        //            Title = post.Title,
+            foreach (var post in db.Posts.Where(x => x.Blog.Id == id))
+                postsList.Add(new PostVM
+                {
+                    Id = post.Id,
+                    DateCreated = post.DateCreated,
+                    Text = post.Text,
+                    Title = post.Title,
+                });
 
-        //        });
-        //    }
-
-        //    return postsList;
-        //}
+            return postsList;
+        }
 
     }
 }
