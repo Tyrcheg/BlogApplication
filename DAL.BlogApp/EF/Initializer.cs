@@ -1,5 +1,4 @@
 ﻿using DAL.BlogApp.Entities;
-using DAL.BlogApp.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
@@ -41,7 +40,6 @@ namespace DAL.BlogApp.EF
             context.Users.AddOrUpdate(u => u.UserName,
                 new ApplicationUser
                 {
-                    Id = "aslkdjfn123",
                     UserName = "Maxim",
                     PasswordHash = new PasswordHasher().HashPassword("qwe123"),
                     PhoneNumber = "123123123",
@@ -59,7 +57,6 @@ namespace DAL.BlogApp.EF
 
                     User = new ApplicationUser
                     {
-                        Id = "aslkdjf211",
                         UserName = "Evgeniy",
                         PasswordHash = new PasswordHasher().HashPassword("qwe123"),
                         PhoneNumber = "123123123"
@@ -78,7 +75,6 @@ namespace DAL.BlogApp.EF
                                     Text = "comment to cook blog",
                                     User = new ApplicationUser
                                     {
-                                        Id = "aslkdjfn121",
                                         UserName = "Dmitry",
                                         PasswordHash = new PasswordHasher().HashPassword("qwe123"),
                                         PhoneNumber = "123123123"
@@ -105,6 +101,64 @@ namespace DAL.BlogApp.EF
                                 {
                                     Text = "Comment",
                                     User = userManager.FindByName("Maxim"),
+                                    DateCreated = DateTime.Now
+                                }
+                            },
+                        }
+                    }
+
+                },
+                new Blog
+                {
+                    DateCreated = DateTime.Now,
+                    Name = "Oblomoff blog",
+
+                    User = new ApplicationUser
+                    {
+                        UserName = "Dryje oblomoff",
+                        PasswordHash = new PasswordHasher().HashPassword("qwe123"),
+                        PhoneNumber = "198123878"
+                    },
+
+                    Posts =  new List<Post>
+                    {
+                        new Post
+                        {
+                            Title = "Stake ribai",
+                            Text = "The best recipe of tibone.",
+                            Comments = new List<Comment>
+                            {
+                                new Comment
+                                {
+                                    Text = "awesome",
+                                    User = new ApplicationUser
+                                    {
+                                        UserName = "Valera",
+                                        PasswordHash = new PasswordHasher().HashPassword("qwe123"),
+                                        PhoneNumber = "123123123"
+                                    },
+                                    DateCreated = DateTime.Now
+                                }
+                            },
+                            DateCreated = DateTime.Now
+                        },
+                        new Post
+                        {
+                            Title = "Fried fish",
+                            Text = "Fried fish recipe",
+                            DateCreated = DateTime.Now,
+                            Comments = new List<Comment>
+                            {
+                                new Comment
+                                {
+                                    Text = "wow",
+                                    User = userManager.FindByName("Maxim"),
+                                    DateCreated = DateTime.Now
+                                },
+                                new Comment
+                                {
+                                    Text = "awesome, man.",
+                                    User = userManager.FindByName("Dmitry"),
                                     DateCreated = DateTime.Now
                                 }
                             },

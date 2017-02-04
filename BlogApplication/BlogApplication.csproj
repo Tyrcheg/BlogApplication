@@ -160,7 +160,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\views\index.html" />
+    <Content Include="app\common\blog.css" />
+    <Content Include="app\templates\blog.html" />
+    <Content Include="app\templates\blogCreate.html" />
+    <Content Include="app\templates\myBlog.html" />
+    <Content Include="app\templates\post.html" />
+    <Content Include="app\templates\postCreate.html" />
+    <Content Include="app\templates\user.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
@@ -212,15 +218,10 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\common\" />
     <Folder Include="app\domain\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -245,8 +246,13 @@
     <TypeScriptCompile Include="app\controllers\blogController.ts" />
     <TypeScriptCompile Include="app\controllers\indexController.ts" />
     <TypeScriptCompile Include="app\app.ts" />
+    <TypeScriptCompile Include="app\controllers\myBlogController.ts" />
+    <TypeScriptCompile Include="app\controllers\postController.ts" />
+    <TypeScriptCompile Include="app\controllers\singleBlogController.ts" />
+    <TypeScriptCompile Include="app\controllers\userController.ts" />
     <TypeScriptCompile Include="app\services\blogService.ts" />
-    <Content Include="app\views\blog.html" />
+    <Content Include="app\templates\blogs.html" />
+    <TypeScriptCompile Include="app\services\postService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

@@ -13,6 +13,7 @@ namespace BlogApplication.Controllers
     {
         AppContext db = AppContext.Create();
 
+        [OutputCache(NoStore = true, Duration = 60, VaryByParam = "*")]
         public ActionResult Index()
         {
             return Redirect("~/index");
@@ -25,13 +26,6 @@ namespace BlogApplication.Controllers
             var model = db.Blogs.Include(x => x.Posts).Include(s => s.Posts.Select(a => a.Comments)).ToList();
             var model1 = db.Blogs.Include(x => x.Posts).ToList();
             return View(model);
-        }
-
-        public ActionResult Contact()
-        {
-            
-
-            return View(db.Users.ToList());
         }
     }
 }

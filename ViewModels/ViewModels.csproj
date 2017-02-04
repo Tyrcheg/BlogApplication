@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlogVM.cs" />
+    <Compile Include="BlogsVM.cs" />
     <Compile Include="CommentVM.cs" />
     <Compile Include="PostVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
