@@ -9,3 +9,4 @@ var app;
     app.UserController = UserController;
     angular.module("app").controller('userController', UserController);
 })(app || (app = {}));
+//# sourceMappingURL=userController.js.map

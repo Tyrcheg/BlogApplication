@@ -152,6 +152,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -252,6 +253,7 @@
     <TypeScriptCompile Include="app\controllers\postController.ts" />
     <TypeScriptCompile Include="app\controllers\singleBlogController.ts" />
     <TypeScriptCompile Include="app\controllers\userController.ts" />
+    <TypeScriptCompile Include="app\services\authService.ts" />
     <TypeScriptCompile Include="app\services\blogService.ts" />
     <Content Include="app\templates\blogs.html" />
     <TypeScriptCompile Include="app\services\postService.ts" />

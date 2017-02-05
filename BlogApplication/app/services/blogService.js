@@ -22,3 +22,4 @@ var app;
         angular.module('app').service("blogService", BlogService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
+//# sourceMappingURL=blogService.js.map

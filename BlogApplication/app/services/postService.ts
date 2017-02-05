@@ -14,8 +14,18 @@ module app.Services {
             return this.$http.get("api/post/getPost/" + id);
         }
 
-        saveComment(comment) {
+        saveComment(comment): ng.IPromise<any> {
+            return this.$http.post("api/comments/post", comment); //,JSON.stringify(comment),
+            //    {
+            //        headers: {
+            //            'Content-Type': 'application/json'
+            //        }
+            //    });
+            
+        }
 
+        deleteComment(id): ng.IPromise<any> {
+            return this.$http.delete("api/comments/delete/" + id);
         }
         
     }

@@ -10,6 +10,7 @@ var app;
             this.$http = $http;
             this.appTitleService = appTitleService;
             this.errors = [];
+            this.commentSaveErrors = [];
             this.newComment = {};
             this.postId = $routeParams.postId;
             this.loadPost();
@@ -20,12 +21,23 @@ var app;
                 .then(function (response) { _this.post = response.data; _this.appTitleService.setTitle(_this.post.title); }, function (error) { return _this.errors = error.data; });
         };
         PostController.prototype.saveComment = function (comment) {
-            this.post.comments.push({
-                dateCreated: Date.now(),
-                userName: "Arthur",
-                text: comment.text
-            });
-            this.newComment = {};
+            var _this = this;
+            this.newComment = {
+                userName: "Artem",
+                text: comment.text,
+                postId: this.postId,
+                dateCreated: Date.now()
+            };
+            this.postService.saveComment(this.newComment)
+                .then(function (success) {
+                //this.loadPost();
+                _this.post.comments.push(_this.newComment);
+                _this.newComment = {};
+            }, function (error) { return _this.commentSaveErrors = error.message; });
+        };
+        PostController.prototype.removeComment = function (id) {
+            var _this = this;
+            this.postService.deleteComment(id).then(function (success) { return _this.loadPost(); }, function (error) { return _this.errors = error.data; });
         };
         PostController.$inject = ['$location', '$routeParams', '$scope',
             'postService', '$http', 'appTitleService'];
@@ -34,3 +46,4 @@ var app;
     app.PostController = PostController;
     angular.module("app").controller('postController', PostController);
 })(app || (app = {}));
+//# sourceMappingURL=postController.js.map

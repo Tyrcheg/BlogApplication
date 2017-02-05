@@ -11,7 +11,8 @@ var app;
             this.appTitleService = appTitleService;
             /* authentication = new Authentication(); */
             this.authentication = { isAuth: true, userName: "Tyrik" };
-            this.$rootScope.$on("$routeChangeSuccess", function (event, current) {
+            this.date = Date.now();
+            this.$rootScope.$on("$routeChangeSuccess", function (e, current) {
                 return (current.loadedTemplateUrl == "app/templates/blogs.html") ?
                     _this.appTitleService.setTitle("Blog Application") :
                     (current.loadedTemplateUrl == "app/templates/myBlog.html") ?
@@ -40,3 +41,4 @@ var Authentication = (function () {
     }
     return Authentication;
 }());
+//# sourceMappingURL=indexController.js.map

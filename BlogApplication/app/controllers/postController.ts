@@ -12,6 +12,7 @@ module app {
         post;
         postId: number;
         errors = [];
+        commentSaveErrors = [];
         newComment = {};
 
         constructor(private $location: ng.ILocationService,
@@ -31,14 +32,29 @@ module app {
                 (response) => { this.post = response.data; this.appTitleService.setTitle(this.post.title); },
                 (error) => this.errors = error.data);
         }
+
         saveComment(comment) {
-            this.post.comments.push(
-                {
-                    dateCreated: Date.now(),
-                    userName: "Arthur",
-                    text: comment.text
-                });
-            this.newComment = {};
+            this.newComment = {
+                userName: "Artem",
+                text: comment.text,
+                postId: this.postId,
+                dateCreated: Date.now()
+            };
+
+            this.postService.saveComment(this.newComment)
+                .then(
+                (success) => {
+                    //this.loadPost();
+                    this.post.comments.push(this.newComment);
+                    this.newComment = {};
+                },
+                (error) => this.commentSaveErrors = error.message);
+        }
+
+        removeComment(id) {
+            this.postService.deleteComment(id).then(
+                (success) => this.loadPost(),
+                (error) => this.errors = error.data);
 
         }
 

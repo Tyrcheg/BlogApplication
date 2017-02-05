@@ -4,6 +4,7 @@ module app {
 
     export class IndexController {
         static $inject = ['$location', '$scope', '$rootScope', '$route', 'appTitleService'];
+        date;
 
         constructor(private $location: ng.ILocationService,
             private $scope: ng.IScope,
@@ -11,7 +12,9 @@ module app {
             private $route: ng.route.IRoute,
             private appTitleService: app.Services.AppTitleService) {
 
-            this.$rootScope.$on("$routeChangeSuccess", (event, current) => 
+            this.date = Date.now();
+
+            this.$rootScope.$on("$routeChangeSuccess", (e, current) => 
                 (current.loadedTemplateUrl == "app/templates/blogs.html") ?
                     this.appTitleService.setTitle("Blog Application") :
                 (current.loadedTemplateUrl == "app/templates/myBlog.html") ?
@@ -21,6 +24,7 @@ module app {
         /* authentication = new Authentication(); */
         authentication = { isAuth: true, userName: "Tyrik" };
 
+        
         logOut() {
             this.authentication.isAuth = false;
         }

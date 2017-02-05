@@ -31,3 +31,13 @@ body {
 #addCommentButton {
     padding: 0 0 15px 25px;
 }
+
+#removeCommentButton {
+    float: right !important;
+    margin-right: 25px;
+    color: black;
+}
+#removeCommentButton:hover {
+    cursor: pointer;
+    color: #808080;
+}

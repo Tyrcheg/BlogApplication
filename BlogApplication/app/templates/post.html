@@ -1,14 +1,26 @@
-﻿<div ng-controller="postController as vm">
+﻿<div>
     <div class="post">
-        <p>Date: {{ vm.post.dateCreated | date : small }}</p>
         <p>&emsp; {{ vm.post.text}}</p>
-        <hr />comments:<hr />
+        <p>&emsp; Date: {{ vm.post.dateCreated | date : small }}</p>
+    </div>
+    <hr />
 
-        <div class="commentSection" ng-repeat="comment in vm.post.comments">
-            <h5>{{comment.userName}}. {{ comment.dateCreated | date : small}}</h5>
-            <p>"{{ comment.text }}"</p>
-            <hr />
-        </div>
+    <div class="commentSection" ng-repeat="comment in vm.post.comments">
+        <a id="removeCommentButton" ng-click="vm.removeComment(comment.commentId)"><i class="glyphicon glyphicon-trash"></i></a>
+         
+        <p>"{{ comment.text }}"</p>
+        <h6>{{comment.userName}}. {{ comment.dateCreated | date : small}}</h6>
+        <hr />
+    </div>
+
+
+    <div ng-hide="vm.commentSaveErrors.length ==  0">
+        <h4 class="text-danger">Errors adding of the comment</h4>
+        <ol>
+            <li ng-repeat="error in vm.commentSaveErrors">
+                <p> {{ error }}</p>
+            </li>
+        </ol>
     </div>
 
     <form name="commentForm" class="newCommentSection row" style="background-color:#eeeeee;" novalidate>
@@ -16,10 +28,11 @@
             <textarea placeholder="Type in your comment" name="text" cols="25" rows="4"
                       ng-model="vm.newComment.text" class="form-control" required></textarea>
         </div>
-        <div id="addCommentButton" >
+        <div id="addCommentButton">
             <button class="btn btn-success" ng-disabled="commentForm.$invalid" ng-click="vm.saveComment(vm.newComment)">Comment</button>
         </div>
     </form>
+
 
     <div ng-hide="vm.errors.length ==  0">
         <h4 class="text-danger">Errors while loading</h4>
