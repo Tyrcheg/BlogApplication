@@ -30,8 +30,7 @@ var app;
             };
             this.postService.saveComment(this.newComment)
                 .then(function (success) {
-                //this.loadPost();
-                _this.post.comments.push(_this.newComment);
+                _this.loadPost();
                 _this.newComment = {};
             }, function (error) { return _this.commentSaveErrors = error.message; });
         };

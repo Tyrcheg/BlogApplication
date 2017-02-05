@@ -28,7 +28,7 @@ namespace BlogApplication.Controllers
                 User = db.Users.First(x => x.UserName == comment.UserName),
                 Post = db.Posts.First(x => x.Id == comment.PostId)
             });
-            db.SaveChangesAsync();
+            db.SaveChanges();
             //return new HttpResponseMessage(HttpStatusCode.OK);
             return Ok();
         }

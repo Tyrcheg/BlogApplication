@@ -44,8 +44,7 @@ module app {
             this.postService.saveComment(this.newComment)
                 .then(
                 (success) => {
-                    //this.loadPost();
-                    this.post.comments.push(this.newComment);
+                    this.loadPost();
                     this.newComment = {};
                 },
                 (error) => this.commentSaveErrors = error.message);
