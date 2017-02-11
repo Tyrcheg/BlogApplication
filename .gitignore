@@ -1,3 +1,9 @@
+packages
+BlogApp.BLL/bin
+BlogApp.DAL/bin
+BlogApp.DTO/bin
+BlogApp.Web/bin
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
