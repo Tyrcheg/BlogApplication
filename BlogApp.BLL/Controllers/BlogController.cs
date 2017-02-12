@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using BlogApp.DTO;
 using BlogApp.DAL.EF;
-using System.Data.Entity;
 using System.Web.Http;
+using BlogApp.DAL.UnitOfWork;
 
 namespace BlogApp.BLL.Controllers
 {
     [RoutePrefix("api/blog")]
     public class BlogController : BaseController
     {
-        AppContext db = AppContext.Create();
+        UnitOfWork unitOfWork = new UnitOfWork(AppContext.Create());
 
         [HttpGet]
         [Route("GetBlogs")]
         public IEnumerable<BlogsVM> GetBlogs()
         {
             var blogsList = new List<BlogsVM>();
+            var blogs = unitOfWork.Blogs.GetBlogsWithPostsAuthors(1, 10);
 
-            foreach (var blog in db.Blogs.Include(x => x.Posts).Include(x => x.User))
+            foreach (var blog in blogs)
                 blogsList.Add(new BlogsVM
                 {
                     BlogId = blog.Id,
@@ -31,12 +31,13 @@ namespace BlogApp.BLL.Controllers
             return blogsList;
         }
         [HttpGet]
-        [Route("GetAllBLogsPosts/{id?}")]
-        public IEnumerable<PostVM> GetAllBlogsPosts(int? id)
+        [Route("GetAllBLogsPosts/{id}")]
+        public IEnumerable<PostVM> GetAllBlogsPosts(int id)
         {
             var postsList = new List<PostVM>();
+            var blogsPosts = unitOfWork.Blogs.Get(id);
 
-            foreach (var post in db.Posts.Where(x => x.Blog.Id == id))
+            foreach (var post in blogsPosts.Posts)
                 postsList.Add(new PostVM
                 {
                     Id = post.Id,

@@ -25,9 +25,6 @@ A:\AngularJS\Angular1Plural\BlogApplication\BlogApp.DAL\bin\Debug\Microsoft.AspN
 A:\AngularJS\Angular1Plural\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.csprojResolveAssemblyReference.cache
 A:\AngularJS\Angular1Plural\BlogApplication\BlogApp.DAL\obj\Debug\DAL.BlogApp.dll
 A:\AngularJS\Angular1Plural\BlogApplication\BlogApp.DAL\obj\Debug\DAL.BlogApp.pdb
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\DAL.BlogApp.dll.config
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\DAL.BlogApp.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\DAL.BlogApp.pdb
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\EntityFramework.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
@@ -36,6 +33,9 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\EntityFramework.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\DAL.BlogApp.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\DAL.BlogApp.pdb
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.csprojResolveAssemblyReference.cache
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DAL.dll.config
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DAL.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DAL.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.pdb

@@ -7,8 +7,8 @@
     <ProjectGuid>{135368F9-8A0D-4A6F-A175-9A7B21979A5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ViewModels</RootNamespace>
-    <AssemblyName>ViewModels</AssemblyName>
+    <RootNamespace>BlogApp.DTO</RootNamespace>
+    <AssemblyName>BlogApp.DTO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

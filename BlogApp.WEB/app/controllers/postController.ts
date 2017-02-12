@@ -8,7 +8,7 @@ module app {
 
     export class PostController {
         static $inject = ['$location', '$routeParams',
-            'postService', 'commentService', 'appTitleService'];
+            'postService', 'appTitleService', 'commentService'];
 
         post;
         postId: number;
@@ -20,7 +20,7 @@ module app {
             private $routeParams: IRouteParams,
             private postService: app.Services.PostService,
             private appTitleService: app.Services.AppTitleService,
-            private commentService: app.Services.CommentService) {
+            private commentService: app.Services.CommentService ) {
 
             this.postId = $routeParams.postId;
             this.loadPost();
@@ -36,7 +36,7 @@ module app {
 
         saveComment(comment) {
             this.newComment = {
-                userName: "Artem", //need auth service
+                userId: "76f92ba9-ca11-43cc-83be-87160ef80b4e",
                 text: comment.text,
                 postId: this.postId
             };

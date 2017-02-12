@@ -1,4 +1,5 @@
 ﻿"use strict";
+
 module app.Services {
 
     export class PostService {
@@ -10,5 +11,6 @@ module app.Services {
             return this.$http.get("http://localhost:60110/api/post/getPost/" + id);
         }
     }
+
     angular.module('app').service('postService', PostService);
 }

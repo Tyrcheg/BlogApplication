@@ -1,5 +1,6 @@
 ﻿using BlogApp.DAL.EF;
 using BlogApp.DAL.Entities;
+using BlogApp.DAL.UnitOfWork;
 using BlogApp.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,35 +14,37 @@ namespace BlogApp.BLL.Controllers
     [RoutePrefix("api/comments")]
     public class CommentsController : BaseController
     {
-        private readonly AppContext db = AppContext.Create();
+        UnitOfWork unitOfWork = new UnitOfWork(AppContext.Create()); 
 
         [HttpPost]
-        //[Route("post")]
         public HttpResponseMessage Post(HttpRequestMessage request,  AddCommentVM comment)
         {
 
             if (!ModelState.IsValid)
                 return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
 
-            db.Comments.Add(new Comment
+            var user = unitOfWork.Users.FindById(comment.UserId);
+            var post = unitOfWork.Posts.Get(comment.PostId);
+
+            unitOfWork.Comments.Add(new Comment
             {
                 DateCreated = DateTime.Now,
                 Text = comment.Text,
-                User = db.Users.First(x => x.UserName == comment.UserName),
-                Post = db.Posts.First(x => x.Id == comment.PostId)
+                User = user,
+                Post = post
             });
-            db.SaveChanges();
+            unitOfWork.Complete();
+
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpDelete]
-        //[Route("delete")]
         public IHttpActionResult Delete(int id)
         {
             try
             {
-                db.Comments.Remove(db.Comments.First(x => x.Id == id));
-                db.SaveChanges();
+                unitOfWork.Comments.RemoveById(id);
+                unitOfWork.Complete();
                 return Ok();
             }
             catch
@@ -49,9 +52,7 @@ namespace BlogApp.BLL.Controllers
                 return BadRequest();
             }
         }
-        private IEnumerable<string> GetErrorMessages()
-        {
-            return ModelState.Values.SelectMany(x => x.Errors.Select(y => y.ErrorMessage));
-        }
+        private IEnumerable<string> GetErrorMessages() =>
+            ModelState.Values.SelectMany(x => x.Errors.Select(y => y.ErrorMessage));
     }
 }

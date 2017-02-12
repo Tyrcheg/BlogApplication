@@ -3,7 +3,8 @@ A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\bin\Debug\ViewModels.pdb
 A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\obj\Debug\ViewModels.dll
 A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\obj\Debug\ViewModels.pdb
 A:\AngularJS\Angular1Plural\BlogApplication\ViewModels\obj\Debug\BlogApp.DTO.csprojResolveAssemblyReference.cache
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\ViewModels.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\ViewModels.pdb
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\ViewModels.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\ViewModels.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\BlogApp.DTO.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\BlogApp.DTO.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.csprojResolveAssemblyReference.cache
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.pdb

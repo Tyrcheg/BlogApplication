@@ -3,18 +3,19 @@
 module app {
 
     export class BlogController {
-        static $inject = ['$location', '$scope', '$rootScope', 'blogService', '$http'];
+        static $inject = ['$rootScope', '$scope', '$http', '$location', 'blogService'];
 
         mySort: string;
         sortUnsort: string;
         requestError = [];
         blogs = [];
 
-        constructor(private $location: ng.ILocationService,
+        constructor(private $rootScope,
             private $scope, 
-            private $rootScope,
-            private blogService: app.Services.BlogService,
-            private $http: ng.IHttpService) {
+            private $http: ng.IHttpService,
+            private $location: ng.ILocationService,
+            private blogService: app.Services.BlogService
+            ) {
 
             this.loadBlogs();
             this.mySort = undefined;

@@ -21,3 +21,4 @@ var app;
         angular.module("app").service('authService', AuthService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
+//# sourceMappingURL=authService.js.map

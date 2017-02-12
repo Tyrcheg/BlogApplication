@@ -2,12 +2,12 @@
 var app;
 (function (app) {
     var BlogController = (function () {
-        function BlogController($location, $scope, $rootScope, blogService, $http) {
-            this.$location = $location;
-            this.$scope = $scope;
+        function BlogController($rootScope, $scope, $http, $location, blogService) {
             this.$rootScope = $rootScope;
-            this.blogService = blogService;
+            this.$scope = $scope;
             this.$http = $http;
+            this.$location = $location;
+            this.blogService = blogService;
             this.requestError = [];
             this.blogs = [];
             this.loadBlogs();
@@ -36,9 +36,10 @@ var app;
             event.stopPropagation();
             this.$location.path('/User/' + id);
         };
-        BlogController.$inject = ['$location', '$scope', '$rootScope', 'blogService', '$http'];
+        BlogController.$inject = ['$rootScope', '$scope', '$http', '$location', 'blogService'];
         return BlogController;
     }());
     app.BlogController = BlogController;
     angular.module("app").controller('blogController', BlogController);
 })(app || (app = {}));
+//# sourceMappingURL=blogController.js.map

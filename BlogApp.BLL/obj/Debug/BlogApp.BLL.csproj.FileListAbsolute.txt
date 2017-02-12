@@ -95,7 +95,6 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\roslyn\vbc.exe
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\roslyn\VBCSCompiler.exe
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\roslyn\VBCSCompiler.exe.config
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\Antlr3.Runtime.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\DAL.BlogApp.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\EntityFramework.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\EntityFramework.SqlServer.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\Microsoft.AspNet.Identity.Core.dll
@@ -127,10 +126,7 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\System.Web.Razor.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\System.Web.WebPages.Deployment.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\System.Web.WebPages.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\System.Web.WebPages.Razor.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\ViewModels.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\WebGrease.dll
-A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\DAL.BlogApp.pdb
-A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\ViewModels.pdb
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\System.Web.Http.Cors.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\Newtonsoft.Json.xml
@@ -182,3 +178,7 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\roslyn\vbc.exe.config
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\roslyn\vbc.rsp
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApplication.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApplication.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApp.DAL.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApp.DTO.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApp.DAL.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.BLL\bin\BlogApp.DTO.pdb

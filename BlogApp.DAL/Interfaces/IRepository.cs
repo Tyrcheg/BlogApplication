@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace DAL.BlogApp.Interfaces
+namespace BlogApp.DAL.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class 
     {
@@ -15,5 +15,6 @@ namespace DAL.BlogApp.Interfaces
 
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
+
     }
 }

@@ -22,7 +22,7 @@ var app;
         PostController.prototype.saveComment = function (comment) {
             var _this = this;
             this.newComment = {
-                userName: "Artem",
+                userId: "76f92ba9-ca11-43cc-83be-87160ef80b4e",
                 text: comment.text,
                 postId: this.postId
             };
@@ -37,7 +37,7 @@ var app;
             this.commentService.deleteComment(id).then(function (success) { return _this.loadPost(); }, function (error) { return _this.errors = error.data; });
         };
         PostController.$inject = ['$location', '$routeParams',
-            'postService', 'commentService', 'appTitleService'];
+            'postService', 'appTitleService', 'commentService'];
         return PostController;
     }());
     app.PostController = PostController;

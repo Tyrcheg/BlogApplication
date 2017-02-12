@@ -8,7 +8,7 @@ module app.Services {
         constructor(private $http: ng.IHttpService) { }
 
         saveComment(comment): ng.IPromise<any> {
-            return this.$http.post("http://localhost:60110/api/comments/", comment); //,JSON.stringify(comment),
+            return this.$http.post("http://localhost:60110/api/comments/", comment); 
         }
 
         deleteComment(id): ng.IPromise<any> {
@@ -18,5 +18,4 @@ module app.Services {
     }
 
     angular.module("app").service('commentService', CommentService);
-
 }

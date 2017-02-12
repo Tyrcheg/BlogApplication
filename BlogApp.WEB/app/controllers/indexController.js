@@ -27,3 +27,4 @@ var app;
     app.IndexController = IndexController;
     angular.module("app").controller('indexController', IndexController);
 })(app || (app = {}));
+//# sourceMappingURL=indexController.js.map
