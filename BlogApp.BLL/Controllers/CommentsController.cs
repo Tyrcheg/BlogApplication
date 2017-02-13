@@ -1,6 +1,7 @@
 ﻿using BlogApp.DAL.EF;
 using BlogApp.DAL.Entities;
-using BlogApp.DAL.UnitOfWork;
+using BlogApp.DAL.Interfaces;
+using BlogApp.DAL.Repositories;
 using BlogApp.DTO;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,17 @@ namespace BlogApp.BLL.Controllers
     [RoutePrefix("api/comments")]
     public class CommentsController : BaseController
     {
-        UnitOfWork unitOfWork = new UnitOfWork(AppContext.Create()); 
+        ICommentRepository commentRepository;
+        IUserRepository userRepository;
+        IPostRepository postRepository;
+
+        public CommentsController()
+        {
+            var context = AppContext.Create();
+            commentRepository = new CommentRepository(context);
+            userRepository = new UserRepository(context);
+            postRepository = new PostRepository(context);
+        }
 
         [HttpPost]
         public HttpResponseMessage Post(HttpRequestMessage request,  AddCommentVM comment)
@@ -23,17 +34,17 @@ namespace BlogApp.BLL.Controllers
             if (!ModelState.IsValid)
                 return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
 
-            var user = unitOfWork.Users.FindById(comment.UserId);
-            var post = unitOfWork.Posts.Get(comment.PostId);
+            var user = userRepository.FindById(comment.UserId);
+            var post = postRepository.Get(comment.PostId);
 
-            unitOfWork.Comments.Add(new Comment
+            commentRepository.Add(new Comment
             {
                 DateCreated = DateTime.Now,
                 Text = comment.Text,
                 User = user,
                 Post = post
             });
-            unitOfWork.Complete();
+            commentRepository.Save();
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
@@ -43,8 +54,8 @@ namespace BlogApp.BLL.Controllers
         {
             try
             {
-                unitOfWork.Comments.RemoveById(id);
-                unitOfWork.Complete();
+                commentRepository.RemoveById(id);
+                commentRepository.Save();
                 return Ok();
             }
             catch
@@ -52,6 +63,7 @@ namespace BlogApp.BLL.Controllers
                 return BadRequest();
             }
         }
+
         private IEnumerable<string> GetErrorMessages() =>
             ModelState.Values.SelectMany(x => x.Errors.Select(y => y.ErrorMessage));
     }

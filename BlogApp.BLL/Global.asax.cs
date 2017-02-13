@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace BlogApp.BLLx
+namespace BlogApp.BLL
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

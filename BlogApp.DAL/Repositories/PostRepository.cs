@@ -2,6 +2,8 @@
 using BlogApp.DAL.Entities;
 using BlogApp.DAL.Interfaces;
 using System.Collections;
+using System.Data.Entity;
+using System.Linq;
 
 namespace BlogApp.DAL.Repositories
 {
@@ -12,9 +14,12 @@ namespace BlogApp.DAL.Repositories
         {}
 
 
-        public AppContext AppContext
+        public Post GetPostWithCommentsUsersById(int id)
         {
-            get { return context as AppContext; }
+              return context.Posts
+                .Include(x => x.Comments.Select(u => u.User))
+                .FirstOrDefault(x => x.Id == id);
         }
+
     }
 }

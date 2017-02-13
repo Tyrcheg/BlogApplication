@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace BlogApp.BLLx.Models
+namespace BlogApp.BLL.Models
 {
     // Models used as parameters to AccountController actions.
 

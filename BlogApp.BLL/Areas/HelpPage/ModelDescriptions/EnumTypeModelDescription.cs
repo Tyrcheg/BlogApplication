@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace BlogApp.BLLx.Areas.HelpPage.ModelDescriptions
+namespace BlogApp.BLL.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

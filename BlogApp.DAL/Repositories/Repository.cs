@@ -4,14 +4,15 @@ using System.Linq;
 using System.Linq.Expressions;
 using BlogApp.DAL.Interfaces;
 using System.Data.Entity;
+using BlogApp.DAL.EF;
 
 namespace BlogApp.DAL.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly DbContext context;
+        protected readonly AppContext context;
 
-        public Repository(DbContext context)
+        public Repository(AppContext context)
         {
             this.context = context;
         }
@@ -32,6 +33,23 @@ namespace BlogApp.DAL.Repositories
             => context.Set<TEntity>().Remove(entity);
         public void RemoveRange(IEnumerable<TEntity> entities)
             => context.Set<TEntity>().RemoveRange(entities);
-        
+
+        public void Save() => context.SaveChanges();
+
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+                if (disposing)
+                    context.Dispose();
+
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
     }
 }

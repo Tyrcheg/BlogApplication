@@ -1,6 +1,6 @@
 using System;
 
-namespace BlogApp.BLLx.Areas.HelpPage.ModelDescriptions
+namespace BlogApp.BLL.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

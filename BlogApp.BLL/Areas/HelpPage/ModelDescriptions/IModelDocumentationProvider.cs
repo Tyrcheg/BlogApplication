@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace BlogApp.BLLx.Areas.HelpPage.ModelDescriptions
+namespace BlogApp.BLL.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

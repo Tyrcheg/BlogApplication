@@ -12,11 +12,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using BlogApp.BLLx.Models;
-using BlogApp.BLLx.Providers;
-using BlogApp.BLLx.Results;
+using BlogApp.BLL.Models;
+using BlogApp.BLL.Providers;
+using BlogApp.BLL.Results;
 
-namespace BlogApp.BLLx.Controllers
+namespace BlogApp.BLL.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

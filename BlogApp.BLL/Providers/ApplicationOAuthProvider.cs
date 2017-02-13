@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using BlogApp.BLLx.Models;
+using BlogApp.BLL.Models;
 
-namespace BlogApp.BLLx.Providers
+namespace BlogApp.BLL.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

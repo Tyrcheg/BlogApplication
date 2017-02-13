@@ -1,4 +1,4 @@
-namespace BlogApp.BLLx.Areas.HelpPage
+namespace BlogApp.BLL.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace BlogApp.BLLx
+namespace BlogApp.BLL
 {
     public class BundleConfig
     {

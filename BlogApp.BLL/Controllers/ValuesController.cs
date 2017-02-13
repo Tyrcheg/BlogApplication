@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 
-namespace BlogApp.BLLx.Controllers
+namespace BlogApp.BLL.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

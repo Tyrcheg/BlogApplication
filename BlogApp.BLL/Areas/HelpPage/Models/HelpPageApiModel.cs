@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using BlogApp.BLLx.Areas.HelpPage.ModelDescriptions;
+using BlogApp.BLL.Areas.HelpPage.ModelDescriptions;
 
-namespace BlogApp.BLLx.Areas.HelpPage.Models
+namespace BlogApp.BLL.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

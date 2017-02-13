@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace BlogApp.DAL.Interfaces
 {
-    public interface IRepository<TEntity> where TEntity : class 
+    public interface IRepository<TEntity>: IDisposable where TEntity : class 
     {
         TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
@@ -15,6 +15,8 @@ namespace BlogApp.DAL.Interfaces
 
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
+
+        void Save();
 
     }
 }

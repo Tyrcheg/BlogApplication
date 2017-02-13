@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using BlogApp.BLLx.Areas.HelpPage.ModelDescriptions;
-using BlogApp.BLLx.Areas.HelpPage.Models;
+using BlogApp.BLL.Areas.HelpPage.ModelDescriptions;
+using BlogApp.BLL.Areas.HelpPage.Models;
 
-namespace BlogApp.BLLx.Areas.HelpPage.Controllers
+namespace BlogApp.BLL.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

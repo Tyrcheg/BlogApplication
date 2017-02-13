@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BlogApp.BLLx
+namespace BlogApp.BLL
 {
     public class RouteConfig
     {

@@ -11,11 +11,7 @@ namespace BlogApp.DAL.Repositories
         {}
 
         public ApplicationUser FindById(string id)
-            => AppContext.Users.Find(id);
+            => context.Users.Find(id);
 
-        public AppContext AppContext
-        {
-            get { return context as AppContext; }
-        }
     }
 }

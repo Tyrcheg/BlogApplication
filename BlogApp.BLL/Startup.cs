@@ -2,9 +2,9 @@
 using Owin;
 using BlogApp.DAL.EF;
 
-[assembly: OwinStartup(typeof(BlogApp.BLLx.Startup))]
+[assembly: OwinStartup(typeof(BlogApp.BLL.Startup))]
 
-namespace BlogApp.BLLx
+namespace BlogApp.BLL
 {
     public partial class Startup
     {

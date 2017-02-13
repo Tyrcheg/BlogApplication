@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace BlogApp.BLLx.Areas.HelpPage
+namespace BlogApp.BLL.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

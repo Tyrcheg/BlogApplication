@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Web.Http;
+using BlogApp.DAL.Interfaces;
+using BlogApp.DAL.Repositories;
 
 namespace BlogApp.BLL.Controllers
 {
     [RoutePrefix("api/post")]
     public class PostController : BaseController
     {
-        AppContext db = AppContext.Create();
+        IPostRepository postRepository;
+
+        public PostController()
+        {
+            var context = AppContext.Create();
+            postRepository = new PostRepository(context);
+        }
 
         [Route("getPost/{id}")]
         public PostWithCommentsVM GetPost(int id)
         {
-            var tempPost = db.Posts
-                .Include(x => x.Comments.Select(u => u.User))
-                .FirstOrDefault(x => x.Id == id);
-
+            var tempPost = postRepository.GetPostWithCommentsUsersById(id);
+            
             if (tempPost == null)
                 //return new PostWithCommentsVM { Title = "No post with Id was found" };
                 throw new System.NullReferenceException("No post with this Id was found");

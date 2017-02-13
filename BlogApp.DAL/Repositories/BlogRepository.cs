@@ -16,7 +16,7 @@ namespace BlogApp.DAL.Repositories
         public IEnumerable<Blog> GetBlogsWithPostsAuthors
             (int pageIndex = 1, int pageSize = 10)
         {
-            return AppContext.Blogs
+            return context.Blogs
                 .Include(x => x.User)
                 .OrderBy(x => x.Name).
                 Skip((pageIndex - 1) * pageSize).
@@ -24,9 +24,5 @@ namespace BlogApp.DAL.Repositories
                 ToList();
         }
 
-        public AppContext AppContext
-        {
-            get { return context as AppContext; }
-        }
     }
 }

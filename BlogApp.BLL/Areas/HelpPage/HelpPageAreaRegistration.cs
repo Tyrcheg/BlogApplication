@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace BlogApp.BLLx.Areas.HelpPage
+namespace BlogApp.BLL.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlogApp.BLLx.Models
+namespace BlogApp.BLL.Models
 {
     // Models returned by AccountController actions.
 

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using BlogApp.BLLx.Areas.HelpPage.ModelDescriptions;
-using BlogApp.BLLx.Areas.HelpPage.Models;
+using BlogApp.BLL.Areas.HelpPage.ModelDescriptions;
+using BlogApp.BLL.Areas.HelpPage.Models;
 
-namespace BlogApp.BLLx.Areas.HelpPage
+namespace BlogApp.BLL.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

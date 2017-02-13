@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using BlogApp.BLLx.Providers;
-using BlogApp.BLLx.Models;
+using BlogApp.BLL.Providers;
+using BlogApp.BLL.Models;
 
-namespace BlogApp.BLLx
+namespace BlogApp.BLL
 {
     public partial class Startup
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace BlogApp.BLLx.Areas.HelpPage
+namespace BlogApp.BLL.Areas.HelpPage
 {
     /// <summary>
     /// This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
