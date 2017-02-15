@@ -3,7 +3,6 @@ using Owin;
 using BlogApp.DAL.EF;
 
 [assembly: OwinStartup(typeof(BlogApp.BLL.Startup))]
-
 namespace BlogApp.BLL
 {
     public partial class Startup

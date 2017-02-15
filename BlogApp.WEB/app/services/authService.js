@@ -4,21 +4,19 @@ var app;
     var Services;
     (function (Services) {
         var AuthService = (function () {
-            function AuthService($scope, $http) {
-                this.$scope = $scope;
+            function AuthService($http, $localStorage) {
                 this.$http = $http;
-                this.user = null;
+                this.$localStorage = $localStorage;
+                this.authentication = { isAuth: false, userName: "" };
             }
             AuthService.prototype.login = function (email, password) {
             };
             AuthService.prototype.logout = function () {
-                this.user = null;
             };
-            AuthService.$inject = ['$scope', '$http'];
+            AuthService.$inject = ['$http', '$localStorage'];
             return AuthService;
         }());
         Services.AuthService = AuthService;
         angular.module("app").service('authService', AuthService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=authService.js.map

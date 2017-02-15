@@ -4,20 +4,26 @@ module app.Services {
 
     export class AuthService {
 
-        static $inject = ['$scope', '$http'];
+        static $inject = ['$http', '$localStorage'];
 
-        constructor(private $scope: ng.IScope,
-            private $http: ng.IHttpService) { }
+        constructor(
+            private $http: ng.IHttpService,
+            private $localStorage: app.Factories.LocalStorage) {
 
-        user = null;
+        }
+
+        authentication = { isAuth: false, userName: "" };
 
         login(email, password) {
-
+            
         }
+
+        
 
         logout() {
-            this.user = null;
+
         }
+
 
     }
     angular.module("app").service('authService', AuthService);

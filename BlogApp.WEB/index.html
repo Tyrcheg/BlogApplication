@@ -5,35 +5,20 @@
 
     <meta charset="utf-8" />
 
+    <!--styles-->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <link href="Content/toaster.min.css" rel="stylesheet" />
+    <link href="Content/loading-bar.min.css" rel="stylesheet" />
+
     <link href="app/common/styles.css" rel="stylesheet" />
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.1/angular-resource.min.js"></script>
-    <script src="https://code.angularjs.org/1.6.0/angular-route.min.js"></script>
-
-
-    <script src="app/app.js"></script>
-
-    <script src="app/common/appTitle.js"></script>
-
-    <script src="app/controllers/indexController.js"></script>
-    <script src="app/controllers/blogController.js"></script>
-    <script src="app/controllers/userController.js"></script>
-    <script src="app/controllers/myBlogController.js"></script>
-    <script src="app/controllers/singleBlogController.js"></script>
-    <script src="app/controllers/postController.js"></script>
-
-    <script src="app/services/blogService.js"></script>
-    <script src="app/services/postService.js"></script>
-    <script src="app/services/commentService.js"></script>
 
 </head>
 
 <body ng-controller="indexController as index">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button class="btn btn-success navbar-toggle" data-ng-click="index.navbarExpanded = !index.navbarExpanded">
@@ -43,7 +28,7 @@
             </div>
             <div class="collapse navbar-collapse" data-collapse="!index.navbarExpanded">
                 <ul class="nav navbar-nav">
-                    <li data-ng-hide="!index.authentication.isAuth" ><a href="/MyBlog">My Blog</a></li>
+                    <li data-ng-hide="!index.authentication.isAuth"><a href="/MyBlog">My Blog</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li data-ng-hide="!index.authentication.isAuth"><a href="">Welcome {{ index.authentication.userName}}</a></li>
@@ -64,20 +49,57 @@
         </div>
     </div>
 
-    <div class="container">
-        <div ng-view></div>         
+    <div class="container main">
+        <div ng-view></div>
     </div>
 
-    <hr />
+    <!--<hr />-->
 
-    <div id="footer">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     <p class="text-muted">Created by Tyrik &copy; {{ index.date | date: 'yyyy'}}</p>
+                </div>
+                <div class="col-xs-6">
+                    <p class="text-muted">GitHub: <a href="https://github.com/Tyrcheg" target="_blank">@Tyrcheg</a></p>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
+
+    <!--3rd party-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>-->
+    <script src="Scripts/angular.min.js"></script> <!--1.6.1-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.1/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-animate.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.2/angular-local-storage.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+
+    <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="Scripts/toaster.min.js"></script>
+    <script type='text/javascript' src='Scripts/loading-bar.min.js'></script>
+
+    <!-- main app-->
+    <script src="app/app.js"></script>
+    <!--controllers-->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/blogController.js"></script>
+    <script src="app/controllers/userController.js"></script>
+    <script src="app/controllers/myBlogController.js"></script>
+    <script src="app/controllers/singleBlogController.js"></script>
+    <script src="app/controllers/postController.js"></script>
+    <script src="app/controllers/signUpController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+
+    <!--services-->
+    <script src="app/common/appTitle.js"></script>
+    <script src="app/services/blogService.js"></script>
+    <script src="app/services/postService.js"></script>
+    <script src="app/services/commentService.js"></script>
+    <script src="app/services/$localStorage.js"></script>
 </body>
 </html>

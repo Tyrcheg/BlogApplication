@@ -39,3 +39,5 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DAL.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DAL.pdb
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\obj\Debug\BlogApp.DAL.pdb
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DTO.dll
+A:\AngularJS\Angular1\BlogApplication\BlogApp.DAL\bin\Debug\BlogApp.DTO.pdb

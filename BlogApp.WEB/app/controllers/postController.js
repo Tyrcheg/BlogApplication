@@ -43,4 +43,3 @@ var app;
     app.PostController = PostController;
     angular.module("app").controller('postController', PostController);
 })(app || (app = {}));
-//# sourceMappingURL=postController.js.map

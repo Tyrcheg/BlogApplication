@@ -142,16 +142,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\common\styles.css" />
+    <TypeScriptCompile Include="app\controllers\loginController.ts" />
     <Content Include="app\templates\blog.html" />
     <Content Include="app\templates\blogCreate.html" />
+    <Content Include="app\templates\login.html" />
     <Content Include="app\templates\myBlog.html" />
     <Content Include="app\templates\post.html" />
     <Content Include="app\templates\postCreate.html" />
+    <Content Include="app\templates\signup.html" />
     <Content Include="app\templates\user.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loading-bar.css" />
+    <Content Include="Content\loading-bar.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Site.css" />
@@ -192,6 +197,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loading-bar.js" />
+    <Content Include="Scripts\loading-bar.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\r.js" />
     <Content Include="Scripts\require.js" />
@@ -199,6 +206,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\toaster.min.css" />
+    <Content Include="Scripts\toaster.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -223,8 +232,10 @@
     <TypeScriptCompile Include="app\app.ts" />
     <TypeScriptCompile Include="app\controllers\myBlogController.ts" />
     <TypeScriptCompile Include="app\controllers\postController.ts" />
+    <TypeScriptCompile Include="app\controllers\signUpController.ts" />
     <TypeScriptCompile Include="app\controllers\singleBlogController.ts" />
     <TypeScriptCompile Include="app\controllers\userController.ts" />
+    <TypeScriptCompile Include="app\services\%24localStorage.ts" />
     <TypeScriptCompile Include="app\services\authService.ts" />
     <TypeScriptCompile Include="app\services\blogService.ts" />
     <Content Include="app\templates\blogs.html" />

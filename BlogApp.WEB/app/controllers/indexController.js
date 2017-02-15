@@ -2,10 +2,11 @@
 var app;
 (function (app) {
     var IndexController = (function () {
-        function IndexController($rootScope, appTitleService) {
+        function IndexController($rootScope, appTitleService, $localStorage) {
             var _this = this;
             this.$rootScope = $rootScope;
             this.appTitleService = appTitleService;
+            this.$localStorage = $localStorage;
             this.authentication = { isAuth: true, userName: "Tyrik" };
             this.date = Date.now();
             $rootScope.$on("$routeChangeSuccess", function (e, current) {
@@ -21,10 +22,9 @@ var app;
         IndexController.prototype.logIn = function () {
             this.authentication.isAuth = true;
         };
-        IndexController.$inject = ['$rootScope', 'appTitleService'];
+        IndexController.$inject = ['$rootScope', 'appTitleService', '$localStorage'];
         return IndexController;
     }());
     app.IndexController = IndexController;
     angular.module("app").controller('indexController', IndexController);
 })(app || (app = {}));
-//# sourceMappingURL=indexController.js.map

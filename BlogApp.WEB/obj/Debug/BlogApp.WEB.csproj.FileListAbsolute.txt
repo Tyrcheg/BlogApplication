@@ -203,10 +203,10 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.WebPages.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.WebPages.Deployment.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\obj\Debug\BlogApplication.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\obj\Debug\BlogApplication.pdb
-A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\obj\Debug\BlogApp.WEB.csprojResolveAssemblyReference.cache
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.Razor.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.WebPages.Razor.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.Razor.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\System.Web.WebPages.Razor.xml
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\WebMatrix.Data.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\bin\WebMatrix.Data.xml
+A:\AngularJS\Angular1\BlogApplication\BlogApp.WEB\obj\Debug\BlogApp.WEB.csprojResolveAssemblyReference.cache

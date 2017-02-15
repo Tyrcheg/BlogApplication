@@ -20,4 +20,3 @@ var app;
         angular.module("app").service('commentService', CommentService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=commentService.js.map

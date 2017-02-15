@@ -1,7 +1,8 @@
 ﻿'use strict';
 
 module app {   
-    var app = angular.module('app', ['ngRoute', 'ngResource']);
+    var app = angular.module('app', ['ngRoute', 'ngResource',
+        'angular-loading-bar', 'ui.bootstrap']);
 
     app.config(function ($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
         $routeProvider
@@ -25,6 +26,15 @@ module app {
                 templateUrl: 'app/templates/user.html', controller: 'userController',
                 controllerAs: "vm"
             })
+            .when("/login", {
+                controller: "loginController",
+                templateUrl: "/app/templates/login.html"
+            })
+            .when("/signup", {
+                controller: "signUpController",
+                templateUrl: "/app/templates/signup.html",
+                controllerAs: "suCtrl"
+            })
             .otherwise({
                redirectTo: '/'
             }) 
@@ -32,4 +42,8 @@ module app {
 
         $locationProvider.html5Mode(true);
     });
+
+    //app.run('authService', function (authService) {
+    //    authService.fillAuthData();
+    //}
 }

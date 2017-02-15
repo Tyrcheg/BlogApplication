@@ -13,4 +13,3 @@ var app;
     app.MyBlogController = MyBlogController;
     angular.module("app").controller('myBlogController', MyBlogController);
 })(app || (app = {}));
-//# sourceMappingURL=myBlogController.js.map

@@ -1,18 +1,15 @@
 ﻿<div>
-    <h2> {{ vm.title }}</h2>
-    <br />
     <div class="row">
-
-        <button ng-hide="vm.blogs.length > 0" class="btn btn-info" ng-click="vm.loadBlogs()">Load blogs</button>
-
         <div ng-show="vm.blogs.length > 0">
+            <h2 class="text-center">Blogs</h2>
+
             <input name="sortInput" type="text"  class="form-control" ng-model="findByName" placeholder="Type in to find a particular blog" />
             <br />
             <p ng-show="vm.blogs.length != filteredArray.length">Matches: {{ filteredArray.length }}</p>
 
-            <button class="btn btn-primary"  ng-click="vm.sort()">{{ vm.sortUnsort}}</button>
+            <button ng-show="vm.blogs.length > 2" class="btn btn-primary"  ng-click="vm.sort()">{{ vm.sortUnsort}}</button>
 
-            <h2 class="text-center">Blogs</h2>
+
             <div ng-repeat="blog in filteredArray = (vm.blogs | filter: { blogName: findByName}) | orderBy: vm.mySort">
                 <div ng-click="vm.goToBlogWithId(blog.blogId, blog.blogsOwnerUserName)" class="blogsListElement">
                     <div class="blogsListElementContent">

@@ -16,7 +16,6 @@ module app {
             private $location: ng.ILocationService,
             private blogService: app.Services.BlogService
             ) {
-
             this.loadBlogs();
             this.mySort = undefined;
             this.sortUnsort = "Sort";
