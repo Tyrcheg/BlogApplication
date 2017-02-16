@@ -17,3 +17,4 @@ var app;
         angular.module('app').service('postService', PostService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
+//# sourceMappingURL=postService.js.map

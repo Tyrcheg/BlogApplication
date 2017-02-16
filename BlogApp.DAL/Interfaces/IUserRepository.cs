@@ -8,7 +8,7 @@ namespace BlogApp.DAL.Interfaces
     public interface IUserRepository : IRepository<ApplicationUser>
     {
         ApplicationUser FindById(string id);
-        Task<IdentityResult> RegisterUser(UserVM userModel);
+        Task<IdentityResult> RegisterUser(UserViewModel userModel);
         Task<ApplicationUser> FindUser(string userName, string password);
     }
 }

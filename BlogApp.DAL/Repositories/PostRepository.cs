@@ -17,6 +17,7 @@ namespace BlogApp.DAL.Repositories
         public Post GetPostWithCommentsUsersById(int id)
         {
               return context.Posts
+                .Include(x => x.Comments)
                 .Include(x => x.Comments.Select(u => u.User))
                 .FirstOrDefault(x => x.Id == id);
         }

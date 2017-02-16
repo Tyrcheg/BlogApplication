@@ -27,3 +27,4 @@ var app;
     app.SingleBlogController = SingleBlogController;
     angular.module("app").controller('singleBlogController', SingleBlogController);
 })(app || (app = {}));
+//# sourceMappingURL=singleBlogController.js.map

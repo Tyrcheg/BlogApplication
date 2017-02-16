@@ -9,7 +9,7 @@ var app;
             this.appTitleService = appTitleService;
             this.commentService = commentService;
             this.errors = [];
-            this.commentSaveErrors = [];
+            this.commentErrors = '';
             this.newComment = {};
             this.postId = $routeParams.postId;
             this.loadPost();
@@ -22,7 +22,7 @@ var app;
         PostController.prototype.saveComment = function (comment) {
             var _this = this;
             this.newComment = {
-                userId: "76f92ba9-ca11-43cc-83be-87160ef80b4e",
+                userId: "e5e4a5e3-6381-4fa5-861b-b4e36060887c",
                 text: comment.text,
                 postId: this.postId
             };
@@ -30,11 +30,11 @@ var app;
                 .then(function (success) {
                 _this.loadPost();
                 _this.newComment = {};
-            }, function (error) { return _this.commentSaveErrors = error.message; });
+            }, function (error) { return _this.commentErrors = error.data.message; });
         };
         PostController.prototype.removeComment = function (id) {
             var _this = this;
-            this.commentService.deleteComment(id).then(function (success) { return _this.loadPost(); }, function (error) { return _this.errors = error.data; });
+            this.commentService.deleteComment(id).then(function (success) { return _this.loadPost(); }, function (error) { return _this.commentErrors = error.data.message; });
         };
         PostController.$inject = ['$location', '$routeParams',
             'postService', 'appTitleService', 'commentService'];
@@ -43,3 +43,4 @@ var app;
     app.PostController = PostController;
     angular.module("app").controller('postController', PostController);
 })(app || (app = {}));
+//# sourceMappingURL=postController.js.map

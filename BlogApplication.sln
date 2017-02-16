@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.WEB", "BlogApp.WEB\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.DTO", "BlogApp.DTO\BlogApp.DTO.csproj", "{135368F9-8A0D-4A6F-A175-9A7B21979A5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.BLL", "BlogApp.BLL\BlogApp.BLL.csproj", "{4B46EE15-97D8-4146-80DB-FFD4EFDBE0A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.API", "BlogApp.API\BlogApp.API.csproj", "{4B46EE15-97D8-4146-80DB-FFD4EFDBE0A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

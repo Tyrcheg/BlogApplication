@@ -3,34 +3,40 @@
 module app {
 
     export class IndexController {
-        static $inject = ['$rootScope', 'appTitleService', '$localStorage'];
         date;
 
-        constructor( private $rootScope: ng.IRootScopeService,
-            private appTitleService: app.Services.AppTitleService,
-            private $localStorage: app.Factories.LocalStorage) {
+        static $inject = [
+            '$rootScope', 'appTitleService',
+            '$localStorage', '$location',
+            'authService'];
 
+        constructor(private $rootScope: ng.IRootScopeService,
+            private appTitleService: app.Services.AppTitleService,
+            private $localStorage: app.Factories.LocalStorage,
+            private $location: ng.ILocationService,
+            private authService: app.Services.AuthService) {
 
             this.date = Date.now();
-
-            $rootScope.$on("$routeChangeSuccess", (e, current) => 
-                (current.loadedTemplateUrl == "app/templates/blogs.html") ?
-                    this.appTitleService.title = "Blog Application" :
-                (current.loadedTemplateUrl == "app/templates/myBlog.html") ?
-                        this.appTitleService.title = "My Blog" : null);
+            this.titleChangeConfig();
 
         }
-        
-        authentication = { isAuth: true, userName: "Tyrik" };
+
+        authentication = this.authService.authentication;
 
 
         logOut() {
-            this.authentication.isAuth = false;
+            this.authService.logout();
+            this.$location.path('/');
         }
 
-        logIn() {
-            this.authentication.isAuth = true;
+        titleChangeConfig() {
+            this.$rootScope.$on("$routeChangeSuccess", (e, current) =>
+                (current.loadedTemplateUrl == "app/templates/blogs.html") ?
+                    this.appTitleService.title = "Blog Application" :
+                    (current.loadedTemplateUrl == "app/templates/myBlog.html") ?
+                        this.appTitleService.title = "My Blog" : null);
         }
+
     }
 
     angular.module("app").controller('indexController', IndexController);

@@ -10,18 +10,14 @@
             <a id="removeCommentButton" ng-click="vm.removeComment(comment.commentId)"><i class="glyphicon glyphicon-trash"></i></a>
 
             <p>"{{ comment.text }}"</p>
-            <h6>{{comment.userName}}. {{ comment.dateCreated | date : small}}</h6>
+            <h6>{{comment.userName}}. {{ comment.dateCreated | date : 'MMM d, y h:mm a' }}</h6>
             <hr />
         </div>
 
 
-        <div ng-hide="vm.commentSaveErrors.length ==  0">
-            <h4 class="text-danger">Errors adding of the comment</h4>
-            <ol>
-                <li ng-repeat="error in vm.commentSaveErrors">
-                    <p> {{ error }}</p>
-                </li>
-            </ol>
+        <div ng-hide="vm.commentErrors == ''">
+            <h4 class="text-danger">Comment action failed</h4>
+             {{vm.commentErrors }}
         </div>
 
         <form name="commentForm" class="newCommentSection row" style="background-color:#eeeeee;" novalidate>

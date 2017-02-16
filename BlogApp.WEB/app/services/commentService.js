@@ -6,12 +6,13 @@ var app;
         var CommentService = (function () {
             function CommentService($http) {
                 this.$http = $http;
+                this.serviceBase = "http://localhost:60110/api/comment/";
             }
             CommentService.prototype.saveComment = function (comment) {
-                return this.$http.post("http://localhost:60110/api/comments/", comment);
+                return this.$http.post(this.serviceBase, comment);
             };
             CommentService.prototype.deleteComment = function (id) {
-                return this.$http.delete("http://localhost:60110/api/comments/" + id);
+                return this.$http.delete(this.serviceBase + id);
             };
             CommentService.$inject = ["$http"];
             return CommentService;
@@ -20,3 +21,4 @@ var app;
         angular.module("app").service('commentService', CommentService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
+//# sourceMappingURL=commentService.js.map

@@ -5,14 +5,16 @@ module app.Services {
     export class CommentService {
         static $inject = ["$http"];
 
+        serviceBase = "http://localhost:60110/api/comment/";
+
         constructor(private $http: ng.IHttpService) { }
 
         saveComment(comment): ng.IPromise<any> {
-            return this.$http.post("http://localhost:60110/api/comments/", comment); 
+            return this.$http.post(this.serviceBase, comment); 
         }
 
         deleteComment(id): ng.IPromise<any> {
-            return this.$http.delete("http://localhost:60110/api/comments/" + id);
+            return this.$http.delete(this.serviceBase + id);
         }
 
     }

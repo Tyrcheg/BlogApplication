@@ -13,7 +13,8 @@ module app {
         post;
         postId: number;
         errors = [];
-        commentSaveErrors = [];
+        commentErrors = '';
+
         newComment = {};
 
         constructor(private $location: ng.ILocationService,
@@ -36,7 +37,7 @@ module app {
 
         saveComment(comment) {
             this.newComment = {
-                userId: "76f92ba9-ca11-43cc-83be-87160ef80b4e",
+                userId: "e5e4a5e3-6381-4fa5-861b-b4e36060887c",
                 text: comment.text,
                 postId: this.postId
             };
@@ -47,13 +48,15 @@ module app {
                     this.loadPost();
                     this.newComment = {};
                 },
-                (error) => this.commentSaveErrors = error.message);
+                (error) => this.commentErrors = error.data.message
+            );
         }
 
         removeComment(id) {
             this.commentService.deleteComment(id).then(
                 (success) => this.loadPost(),
-                (error) => this.errors = error.data);
+                (error) => this.commentErrors = error.data.message
+            );
 
         }
     }

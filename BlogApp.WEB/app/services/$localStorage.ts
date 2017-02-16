@@ -11,7 +11,7 @@ module app.Factories {
             localStorage[key] = value;
         }
 
-        get(key: string, defaultValue) {
+        get(key: string) {
             return localStorage[key] || false;
         }
 
@@ -19,7 +19,7 @@ module app.Factories {
             localStorage[key] = JSON.stringify(value);
         }
 
-        getObject(key : string, value) {
+        getObject(key : string) {
             if (localStorage[key] != undefined)
                 return JSON.parse(localStorage[key]);
             return false;
@@ -30,8 +30,6 @@ module app.Factories {
         clear() { localStorage.clear(); }
 
         static factory() {
-            //var instance = () => new LocalStorage();
-            //return instance;
             return () => new LocalStorage();
         }
     }

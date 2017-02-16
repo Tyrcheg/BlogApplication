@@ -12,3 +12,4 @@ var app;
         angular.module('app').service('appTitleService', AppTitleService);
     })(Services = app.Services || (app.Services = {}));
 })(app || (app = {}));
+//# sourceMappingURL=appTitle.js.map

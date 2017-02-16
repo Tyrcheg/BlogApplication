@@ -20,7 +20,7 @@ namespace BlogApp.DAL.Repositories
         public ApplicationUser FindById(string id)
             => context.Users.Find(id);
 
-        public async Task<IdentityResult> RegisterUser(UserVM userModel)
+        public async Task<IdentityResult> RegisterUser(UserViewModel userModel)
         {
             var user = new ApplicationUser { UserName = userModel.UserName };
 

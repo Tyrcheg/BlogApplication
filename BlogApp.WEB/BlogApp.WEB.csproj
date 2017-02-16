@@ -236,6 +236,7 @@
     <TypeScriptCompile Include="app\controllers\singleBlogController.ts" />
     <TypeScriptCompile Include="app\controllers\userController.ts" />
     <TypeScriptCompile Include="app\services\%24localStorage.ts" />
+    <TypeScriptCompile Include="app\services\authInterceptorService.ts" />
     <TypeScriptCompile Include="app\services\authService.ts" />
     <TypeScriptCompile Include="app\services\blogService.ts" />
     <Content Include="app\templates\blogs.html" />

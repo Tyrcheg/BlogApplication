@@ -33,9 +33,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li data-ng-hide="!index.authentication.isAuth"><a href="">Welcome {{ index.authentication.userName}}</a></li>
                     <li data-ng-hide="!index.authentication.isAuth"><a href="" data-ng-click="index.logOut()">Logout</a></li>
-                    <!--<li data-ng-hide="index.authentication.isAuth"> <a href="/Account/Login">Login</a></li>-->
-                    <li data-ng-hide="index.authentication.isAuth"> <a href="" data-ng-click="index.logIn()">Login</a></li>
-                    <li data-ng-hide="index.authentication.isAuth"> <a href="/Account/Register">Sign Up</a></li>
+                    <li data-ng-hide="index.authentication.isAuth"> <a href="/Account/Login">Login</a></li>
+                    <li data-ng-hide="index.authentication.isAuth"> <a href="/Account/SignUp">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -101,5 +100,7 @@
     <script src="app/services/postService.js"></script>
     <script src="app/services/commentService.js"></script>
     <script src="app/services/$localStorage.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/authInterceptorService.js"></script>
 </body>
 </html>

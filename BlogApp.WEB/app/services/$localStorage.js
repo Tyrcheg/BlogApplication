@@ -9,13 +9,13 @@ var app;
             LocalStorage.prototype.set = function (key, value) {
                 localStorage[key] = value;
             };
-            LocalStorage.prototype.get = function (key, defaultValue) {
+            LocalStorage.prototype.get = function (key) {
                 return localStorage[key] || false;
             };
             LocalStorage.prototype.setObject = function (key, value) {
                 localStorage[key] = JSON.stringify(value);
             };
-            LocalStorage.prototype.getObject = function (key, value) {
+            LocalStorage.prototype.getObject = function (key) {
                 if (localStorage[key] != undefined)
                     return JSON.parse(localStorage[key]);
                 return false;
@@ -23,8 +23,6 @@ var app;
             LocalStorage.prototype.remove = function (key) { localStorage.removeItem(key); };
             LocalStorage.prototype.clear = function () { localStorage.clear(); };
             LocalStorage.factory = function () {
-                //var instance = () => new LocalStorage();
-                //return instance;
                 return function () { return new LocalStorage(); };
             };
             LocalStorage.$inject = [];
@@ -34,3 +32,4 @@ var app;
         angular.module('app').factory("$localStorage", LocalStorage.factory());
     })(Factories = app.Factories || (app.Factories = {}));
 })(app || (app = {}));
+//# sourceMappingURL=$localStorage.js.map

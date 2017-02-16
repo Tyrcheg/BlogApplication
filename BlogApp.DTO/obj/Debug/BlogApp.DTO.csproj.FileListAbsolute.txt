@@ -7,4 +7,3 @@ A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\BlogApp.DTO.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\bin\Debug\BlogApp.DTO.pdb
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.dll
 A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.pdb
-A:\AngularJS\Angular1\BlogApplication\BlogApp.DTO\obj\Debug\BlogApp.DTO.csprojResolveAssemblyReference.cache
