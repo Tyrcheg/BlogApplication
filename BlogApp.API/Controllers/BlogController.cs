@@ -2,7 +2,7 @@
 using BlogApp.DTO;
 using BlogApp.DAL.EF;
 using System.Web.Http;
-using BlogApp.API.Services;
+using BlogApp.BLL.Services;
 
 namespace BlogApp.API.Controllers
 {

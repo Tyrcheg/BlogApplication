@@ -3,14 +3,15 @@ using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using BlogApp.DAL.EF;
 using BlogApp.DTO;
-using BlogApp.API.Services;
+using BlogApp.BLL.Interfaces;
+using BlogApp.BLL.Services;
 
 namespace BlogApp.API.Controllers
 {
     [RoutePrefix("api/Account")]
     public class AccountController : BaseController
     {
-        AccountService accountService = new AccountService(AppContext.Create()); 
+        IAccountService accountService = new AccountService(AppContext.Create()); 
 
         [HttpPost, Route("Register")]
         public async Task<IHttpActionResult> Register(UserViewModel userModel)

@@ -1,13 +1,14 @@
-﻿using BlogApp.DAL.EF;
-using BlogApp.DAL.Repositories;
+﻿using BlogApp.BLL.Interfaces;
+using BlogApp.DAL.EF;
 using BlogApp.DAL.Interfaces;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
+using BlogApp.DAL.Repositories;
 using BlogApp.DTO;
+using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 
-namespace BlogApp.API.Services
+namespace BlogApp.BLL.Services
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
         readonly IUserRepository _userRepository;
 

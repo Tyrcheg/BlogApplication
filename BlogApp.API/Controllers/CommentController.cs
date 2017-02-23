@@ -1,4 +1,5 @@
-﻿using BlogApp.API.Services;
+﻿using BlogApp.BLL.Interfaces;
+using BlogApp.BLL.Services;
 using BlogApp.DAL.EF;
 using BlogApp.DTO;
 using System.Collections.Generic;
@@ -13,19 +14,19 @@ namespace BlogApp.API.Controllers
     [RoutePrefix("api/comments")]
     public class CommentController : BaseController
     {
-        CommentService commentService = new CommentService(AppContext.Create());
+        ICommentService _commentService = new CommentService(AppContext.Create());
 
         public HttpResponseMessage Post(HttpRequestMessage request,  AddCommentViewModel comment)
         {
             if (!ModelState.IsValid)
                 return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
 
-            return commentService.Post(request, comment);
+            return _commentService.Post(request, comment);
         }
         
         public IHttpActionResult Delete(int id)
         {
-            if (commentService.Delete(id))
+            if (_commentService.Delete(id))
                 return Ok();
             return BadRequest();
         }

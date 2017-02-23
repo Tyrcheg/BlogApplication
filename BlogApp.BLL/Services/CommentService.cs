@@ -1,4 +1,5 @@
-﻿using BlogApp.DAL.EF;
+﻿using BlogApp.BLL.Interfaces;
+using BlogApp.DAL.EF;
 using BlogApp.DAL.Entities;
 using BlogApp.DAL.Interfaces;
 using BlogApp.DAL.Repositories;
@@ -8,9 +9,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 
-namespace BlogApp.API.Services
+namespace BlogApp.BLL.Services
 {
-    public class CommentService
+    public class CommentService : ICommentService
     {
         ICommentRepository commentRepository;
         IUserRepository userRepository;

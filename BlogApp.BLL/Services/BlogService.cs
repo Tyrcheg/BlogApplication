@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using BlogApp.DAL.EF;
 using BlogApp.DAL.Repositories;
 using BlogApp.DAL.Interfaces;
 using BlogApp.DTO;
+using BlogApp.BLL.Interfaces;
 
-namespace BlogApp.API.Services
+namespace BlogApp.BLL.Services
 {
-    public class BlogService
+    public class BlogService : IBlogService
     {
         IBlogRepository blogRepository;
         public BlogService(AppContext appContext)

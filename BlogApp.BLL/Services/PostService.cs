@@ -3,10 +3,11 @@ using BlogApp.DAL.EF;
 using BlogApp.DAL.Repositories;
 using BlogApp.DAL.Interfaces;
 using BlogApp.DTO;
+using BlogApp.BLL.Interfaces;
 
-namespace BlogApp.API.Services
+namespace BlogApp.BLL.Services
 {
-    public class PostService
+    public class PostService : IPostService
     {
         IPostRepository postRepository;
 
